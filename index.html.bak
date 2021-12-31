@@ -1,52 +1,23 @@
 <html>
 <title>台服#洗牌&箱活#用鑽計算器</title>
-<meta content="text/html" charset = "utf-8"></meta>
+<META http-equiv="Content-Type"  content="text/html; charset=utf-8" >
+<META name="viewport"  content="width=device-width, initial-scale=1">
 <style>
 html{
 	font-family: "Microsoft soft","Times";
-	line-height: 1.15;
+	line-height: 1.2;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	-ms-overflow-style: scrollbar;
-	-webkit-tap-highlight-color: transparent;
-	height : auto;
-	padding : 0.2rem;
-	background-color: steelblue ;
+	-webkit-input-placeholder ;
+	height : 1000px;
+	
 }
 
 body {
     background-color: lightblue	;
 }
 
-
-p {
-	font-size: 2.5rem;
-	position: relative;
-	font-family :"Microsoft soft","Times";
-	text-align: center;
-	font-weight: normal;
-	color : midnightblue;
-	background-color : steelblue;
-	height: 2.5rem;
-	margin : .25rem;
-	padding : .25rem;
-	font-weight : bold;
-	
-}
-
-h1{
-	font-size: 2rem;
-	position: relative;
-	font-family :"Microsoft soft","Times";
-	text-align: center;
-	font-weight: normal;
-	color : midnightblue;
-	background-color : lightblue;
-	height: 2rem;
-	margin : .75rem;
-	padding : .75rem;
-	
-}
 
 .card-header {
     padding: .75rem 1.25rem;
@@ -58,21 +29,6 @@ h1{
 
 }
 
-.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    word-wrap: break-word;
-    background-color: steelblue	;
-    background-clip: border-box;
-    border-radius: 0.5rem;
-	align-items: center;
-	width: auto;
-	height: auto;
-	
-}
 
 .blocks {
     display: grid;
@@ -124,7 +80,7 @@ select{
 form{
 	font-family: "Microsoft soft","Times";
 	height: 2rem;
-	color:midnightblue	;
+	color:midnightblue;
 	text-align:center;
 }
 	
@@ -157,67 +113,10 @@ input{
 
 @media only screen and (max-device-width: 600px) {
 
-html{
-	font-family: "Microsoft soft","Times";
-	line-height: 1.15;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	-ms-overflow-style: scrollbar;
-	height : auto;
-	padding : 0.2rem;
-	background-color: steelblue ;
-	
-}	
-
 body {
     background-color: steelblue	;
-
 }
 
-p {
-	font-size: 1.5rem;
-	position: relative;
-	font-family :"Microsoft soft","Times";
-	text-align: center;
-	font-weight: normal;
-	color : midnightblue;
-	background-color : steelblue;
-	height: 1.5rem;
-	margin : .25rem;
-	padding : .25rem;
-	font-weight : bold;
-	
-}
-
-
-h1{
-	font-size: 1rem;
-	position: relative;
-	font-family :"Microsoft soft","Times";
-	text-align: center;
-	font-weight: normal;
-	color : midnightblue;
-	background-color : lightblue;
-	height: 1rem;
-	margin : .25rem;
-	padding : .25rem;
-	
-}
-
-.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    word-wrap: break-word;
-    background-color: steelblue	;
-    background-clip: border-box;
-	align-items: center;
-	width: auto;
-	height: auto;
-	
-}
 
 .card-header {
     padding: 0rem 0rem;
@@ -234,8 +133,6 @@ h1{
 	width: auto;
 	font-size: 0.9rem;
 	color: yellow;
-	
-
 	
 }
 
@@ -279,7 +176,7 @@ select{
 form{
 	font-family: "Microsoft soft","Times";
 	/height: 1.5rem;
-	color:midnightblue	;
+	color:midnightblue;
 	text-align:center;
 }
 	
@@ -299,15 +196,14 @@ input{
 	color:midnightblue;	
 }
 
-.button
-{   color:midnightblue;
+.button{ 
+	color:midnightblue;
 	height: 3rem;
 	width: 7rem;
 	font-size: 1.5rem;
 	background-color:lightblue;
 	border: none;
 }
-
 
 }
 
