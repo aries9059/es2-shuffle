@@ -384,18 +384,16 @@ function run_all(){
 	}else{
 		show_time = time_left_min;
 	}
-	//window.alert("show_time:" + show_time );
 	
 
 	/*剩餘天數*/
 	var day_left  = Math.ceil((time_left_min-60*22)/(60*24));
-	//window.alert("day_left:" + day_left );
+	
 	
 	/*自回bp&work計算*/
 	var bp_recovory = Math.ceil(time_left_min/30)-(bp_waste*day_left);
 	var work_recovory = Math.ceil(time_left_min/work_time)-(work_waste*day_left);
-	//window.alert("bp_recovory:" + bp_recovory );
-	//window.alert("work_recovory:" + work_recovory );
+	
 
 
 	/*判斷 work pt*/
@@ -405,7 +403,7 @@ function run_all(){
 	}else{
 		work_pt = 250;
 	}
-	//window.alert("work_pt:" + work_pt );
+	
 	
 	
 	/*道具*/
@@ -420,9 +418,7 @@ function run_all(){
 		whistle_package = 0;
 		double_package = 0;
 	}
-	//window.alert("未領大月哨子數:" + whistle_package );
-	//window.alert("未領大月翻倍數:" + double_package );
-
+	
 	
 	/*whitstle_pt 預計拿*/
 	var whitstle_pt;
@@ -482,7 +478,7 @@ function run_all(){
 	else {    
 		whitstle_pt = whitstle_pt - 30;
 	}
-	//window.alert("還可拿積分哨子:" + whitstle_pt );
+	
 	
 	
 	/*day_draw*/
@@ -493,7 +489,7 @@ function run_all(){
 	else{
 		whitstle_draw = 0;
 	}
-	//window.alert("還可拿每日一抽哨子:" + whitstle_draw );
+	
 	
 	
 	/*loudspeaker_pt*/
@@ -523,7 +519,7 @@ function run_all(){
 	else {
 		loudspeaker_pt = loudspeaker_pt - 3;
 	}
-	//window.alert("還可拿擴音器:" + loudspeaker_pt );
+	
 	
 	
 	/*登入獎勵*/
@@ -566,8 +562,7 @@ function run_all(){
 			pass_gift = 450;
 		}
 	}
-	//window.alert("還可拿登入哨子:" + whistle_gift );
-	//window.alert("還可拿登入pass:" + pass_gift );
+	
 
 
 	/*daily mission*/
@@ -578,7 +573,7 @@ function run_all(){
 	else{
 		pass_mission = 0;
 	}
-	//window.alert("任務pass:" + pass_mission );
+	
 
 	
 	/*星光次數*/
@@ -589,7 +584,7 @@ function run_all(){
 	else{
 		stage_event = 0;	
 	}
-	//window.alert("預計還有星光次數：" + stage_event);
+	
 
 	var time_stage;
 	if (stage_complete == 1){
@@ -598,7 +593,7 @@ function run_all(){
 	else{
 		time_stage = 0;	
 	}
-	//window.alert ("已進行星光次數：" + time_stage);
+	
 
 
 	/*exp1計算*/
@@ -632,10 +627,7 @@ function run_all(){
 	var exp_gain;
 	exp_other = 20*work_recovory;
 	exp_gain = exp_bp + exp_other;
-	//window.alert ("exp_gain：" + exp_gain);
-	//window.alert( "一共獲得" + exp_bp + "+" + exp_other + "共" + exp_gain + "經驗值" );
-
-
+	
 
 	/*exp2計算*/
 	var level_mid = 0;
@@ -644,12 +636,11 @@ function run_all(){
 	for (level_mid = level_now_t; exp_gain >= exp_need_t; level_mid++){
 		exp_gain = exp_gain - exp_need_t;
 		exp_need_t = level_mid*100+2500;
-		//window.alert ( "剩餘exp:" + exp_gain );
+		
 	}
 
 	var level_up = Math.floor(level_mid - level_now_t);
-	//window.alert ( "一共升級:" + level_up);
-
+	
 
 	/*pt平均計算*//* normal:1bp ; event:100pass */
 	var score_normal_t = Number(score_normal);
@@ -673,8 +664,7 @@ function run_all(){
 	/*pass計算1*/
 	var pass_now_t = Number(pass_now);
 	var free_pass = free_bp*10 + free_work + free_whistle*10 + free_double*10 + free_loudspeaker*100 + pass_gift + pass_mission + pass_now_t;
-	//window.alert ( "合計可用pass數：" + free_pass);
-
+	
 
 	/*一般曲餘數*/   //翻倍會算次數嗎？
 	var bp_transfer = free_bp + free_whistle + 10*free_loudspeaker;
@@ -720,13 +710,11 @@ function run_all(){
 		bp_remain = 0;
 	}
 
-	//window.alert ( "一般曲整數：" + Math.floor( bp_transfer / bp_use_t));
-	//window.alert ( "一般曲餘數：" + bp_remain);
+	
 
 	/*一般曲計算*/	
 	var time_normal = Math.floor( bp_transfer / bp_use_t) + remain_normal;
-	//window.alert ( "平刷一般曲次數：" + time_normal);
-
+	
 
 	/*活動曲餘數*/
 	var remain_event = 0;
@@ -770,13 +758,10 @@ function run_all(){
 		pass_remain = 0;
 	}
 
-	//window.alert ( "活動曲整數：" + Math.ceil(free_pass / pass_use_t));
-	//window.alert ( "活動曲餘數：" + pass_remain);
 
 	/*活動曲計算*/
 	time_event = Math.ceil( free_pass / pass_use_t) + remain_event;
-	//window.alert ( "平刷活動曲次數：" + time_event);
-
+	
 
 	/*free_pt_count*/
 	var free_bp_pt = pt_normal*free_bp;
@@ -787,22 +772,14 @@ function run_all(){
 	var free_stage_pt = 5000*stage_event;
 	var free_pass_pt = Math.floor(pt_event * free_pass / 100);
 	var free_pt_total = free_bp_pt + free_work_pt + free_whistle_pt + free_loudspeaker_pt + free_double_pt + free_stage_pt + free_pass_pt + Number(pt_now) +free_ability;
-	/*window.alert ( "可用bp數獲得pt：" + free_bp_pt);
-	window.alert ( "可用work數獲得pt：" + free_work_pt);
-	window.alert ( "可用哨子數獲得pt：" + free_whistle_pt);
-	window.alert ( "可用擴音器數獲得pt：" + free_loudspeaker_pt);
-	window.alert ( "可用翻倍數獲得pt：" + free_double_pt);
-	window.alert ( "可用pass獲得pt：" + free_pass_pt);
-	window.alert ( "未打星光獲得pt：" +  5000*stage_event);
-	window.alert ( "平刷可獲得縂pt(含製作人)：" + free_pt_total);*/
-
+	
 
 	/*diamond_pt_count*/
 	var adv_bp = (10*pt_normal + pt_event)/10;
 	var pt_target_t = Number(pt_target);
 	var need_bp = Math.ceil((pt_target_t - free_pt_total) / adv_bp);
 	var dia_need = 20*need_bp;
-	//window.alert ( "耗鑽：" + dia_need);
+	
 
 
 	/*paid_exp_count*/
@@ -832,7 +809,6 @@ function run_all(){
 	}
 	
 	var paid_level_up = Math.floor(level_final-level_mid);
-	//window.alert ( "付費升等：" + paid_level_up);
 	var final_level_up = level_up + paid_level_up;
 
 	/*歌曲次數計算2*/
@@ -918,34 +894,17 @@ function run_all(){
 	}
 
 
-
 	var  total_normal = paid_normal + time_normal ;
 	var  total_event = paid_event + time_event ;
-
 	var num_bp = need_bp - 10*paid_level_up;
 	var num_dia = dia_need - 20*10*paid_level_up ;
 	
 	/*計算結束 */ 			/*歐耶 歐耶 歐耶*/
 
-
-
-	/*換頁輸出未設定排版  new sub win 可能可以解決？*/
-	/*document.write("洗牌or箱活碎鑽計算結果：</br></br>");
-	document.write("剩餘活動時間：" + time_left_hour + "小時" + '</br>');
-	document.write("剩餘自回bp數：" + bp_recovory + '</br>');
-	document.write("剩餘自回工作券數：" + work_recovory + '</br>');
-	document.write("平刷可得pt數："+ free_pt_total +"</br>");
-	document.write("總共升級："+ final_level_up +"</br>");
-	document.write("普通曲每bp可獲得pt數："+ pt_normal +"</br>");
-	document.write("活動曲每100pass可獲得pt數："+ pt_event +"</br>");
-	document.write("一般曲總共要刷："+ total_normal +"</br>");
-	document.write("活動曲總共要刷："+ total_event +"</br>");
-	document.write("達標還需bp數："+ num_bp +"</br>");
-	document.write("須耗鑽數："+ num_dia +"</br>");*/
-	
+		
 	var showbox_01 = document.getElementById("showbox_01");
 	showbox_01.innerHTML = "洗牌or箱活碎鑽計算結果：";
-	
+
 	var showbox_02 = document.getElementById("showbox_02");
 	showbox_02.innerHTML = "剩餘活動時間：" + time_left_hour + "小時" ;
 	
@@ -981,8 +940,6 @@ function run_all(){
 	
 }
 
-
-
 </script>
 
 
@@ -994,7 +951,6 @@ function run_all(){
 	<br>
 	</div>
 	
-
 	<div class = "blocks" >
 	    
 	    為避免用到舊的數據，請先刷新(F5)再輸入<br>
