@@ -1,0 +1,1285 @@
+<html>
+<title>台服#洗牌&箱活#用鑽計算器</title>
+<meta content="text/html" charset = "utf-8"></meta>
+<style>
+html{
+	font-family: "Microsoft soft","Times";
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-ms-overflow-style: scrollbar;
+	-webkit-tap-highlight-color: transparent;
+	height : auto;
+	padding : 0.2rem;
+	background-color: steelblue ;
+}
+
+body {
+    background-color: lightblue	;
+}
+
+
+p {
+	font-size: 2.5rem;
+	position: relative;
+	font-family :"Microsoft soft","Times";
+	text-align: center;
+	font-weight: normal;
+	color : midnightblue;
+	background-color : steelblue;
+	height: 2.5rem;
+	margin : .25rem;
+	padding : .25rem;
+	font-weight : bold;
+	
+}
+
+h1{
+	font-size: 2rem;
+	position: relative;
+	font-family :"Microsoft soft","Times";
+	text-align: center;
+	font-weight: normal;
+	color : midnightblue;
+	background-color : lightblue;
+	height: 2rem;
+	margin : .75rem;
+	padding : .75rem;
+	
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: steelblue	;
+	font-size: 2rem;
+	font-weight : bold;
+	height: auto;
+
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: steelblue	;
+    background-clip: border-box;
+    border-radius: 0.5rem;
+	align-items: center;
+	width: auto;
+	height: auto;
+	
+}
+
+.blocks {
+    display: grid;
+    grid-gap: 0;
+	background: steelblue;
+	width: auto;
+	font-size: 1.5rem;
+	color: yellow;
+
+	
+}
+
+.setting-block {
+	padding : 1rem;
+	width: auto;
+	height: auto;
+    display: flex;
+    flex-direction: column-reversed ;
+	background:lightblue;
+	justify-content: center;	
+	align-items: self; 
+	font-size: 1.75rem;
+	color:midnightblue;
+}
+
+.show-block {
+	padding : 1rem;
+	width: auto;
+	height: auto;
+    display: flex;
+    flex-direction: column-reversed ;
+	background:lightblue;
+	justify-content: center;	
+	align-items: self; 
+	color:midnightblue;
+	font-size: 1.75rem;
+	text-align:left;
+}
+	
+select{
+	font-family: "Microsoft soft","Times";
+	font-size: 1.75rem;
+	height: 2.2rem;
+	color:midnightblue;
+	background:aliceblue;
+	text-align:center;
+}
+
+form{
+	font-family: "Microsoft soft","Times";
+	height: 2rem;
+	color:midnightblue	;
+	text-align:center;
+}
+	
+input{
+	height: 2.2rem;
+	padding: 0.1rem 0.2rem;
+	font-size: 1.75rem;
+	font-family: "Microsoft soft", "Times";
+	font-color:midnightblue;
+	background:aliceblue; 
+	border-style:solid;
+	border-width: 0.1rem;
+	border-radius: 0.1rem;
+	autocomplete: off;
+	text-align:center;
+	position: center;
+	color:midnightblue;
+	
+}
+
+.button
+{   color:midnightblue;
+	height: 3rem;
+	width: 7rem;
+	font-size: 1.5rem;
+	background-color:lightblue;
+	border: none;
+}
+
+
+@media only screen and (max-device-width: 600px) {
+
+html{
+	font-family: "Microsoft soft","Times";
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-ms-overflow-style: scrollbar;
+	height : auto;
+	padding : 0.2rem;
+	background-color: steelblue ;
+	
+}	
+
+body {
+    background-color: steelblue	;
+
+}
+
+p {
+	font-size: 1.5rem;
+	position: relative;
+	font-family :"Microsoft soft","Times";
+	text-align: center;
+	font-weight: normal;
+	color : midnightblue;
+	background-color : steelblue;
+	height: 1.5rem;
+	margin : .25rem;
+	padding : .25rem;
+	font-weight : bold;
+	
+}
+
+
+h1{
+	font-size: 1rem;
+	position: relative;
+	font-family :"Microsoft soft","Times";
+	text-align: center;
+	font-weight: normal;
+	color : midnightblue;
+	background-color : lightblue;
+	height: 1rem;
+	margin : .25rem;
+	padding : .25rem;
+	
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: steelblue	;
+    background-clip: border-box;
+	align-items: center;
+	width: auto;
+	height: auto;
+	
+}
+
+.card-header {
+    padding: 0rem 0rem;
+    margin-bottom: 0;
+    background-color: steelblue	;
+	font-size: 1rem;
+	font-weight : bold;
+}
+
+.blocks {
+    display: grid;
+    grid-gap: 0;
+	background: steelblue;
+	width: auto;
+	font-size: 0.9rem;
+	color: yellow;
+	
+
+	
+}
+
+.setting-block {
+	padding : 0.25rem;
+	width: auto;
+	height: auto;
+    display: flex;
+    flex-direction: column-reversed ;
+	background:lightblue;
+	justify-content: center;	
+	align-items: self; 
+	font-size: 1rem;
+	color:midnightblue;
+	
+}
+
+.show-block {
+	padding : 0.25rem;
+	width: auto;
+	height: auto;
+    display: flex;
+    flex-direction: column-reversed ;
+	background:lightblue;
+	justify-content: center;	
+	align-items: self; 
+	color:midnightblue;
+	font-size: 1rem;
+}
+
+
+select{
+	font-family: "Microsoft soft","Times";
+	font-size: 1rem;
+	height: 1.5rem;
+	color:midnightblue;
+	background:aliceblue;
+	text-align:center
+}
+
+form{
+	font-family: "Microsoft soft","Times";
+	/height: 1.5rem;
+	color:midnightblue	;
+	text-align:center;
+}
+	
+input{
+	height: 1.5rem;
+	padding: 0.1rem 0.2rem;
+	font-size: 1rem;
+	font-family: "Microsoft soft", "Times";
+	font-color:midnightblue;
+	background:aliceblue; 
+	border-style:solid;
+	border-width: 0.1rem;
+	border-radius: 0.1rem;
+	autocomplete: off;
+	text-align:center;
+	position: center;
+	color:midnightblue;	
+}
+
+.button
+{   color:midnightblue;
+	height: 3rem;
+	width: 7rem;
+	font-size: 1.5rem;
+	background-color:lightblue;
+	border: none;
+}
+
+
+}
+
+
+</style>
+
+<script>
+function run_all(){
+	const giftElement = document.getElementById("gift");
+	const gift = giftElement.value;
+	const date_endElement = document.getElementById("date_end");
+	const date_end = date_endElement.value;
+	const pt_nowElement = document.getElementById("pt_now");
+	const pt_now = pt_nowElement.value;	
+	const pt_targetElement = document.getElementById("pt_target");
+	const pt_target = pt_targetElement.value;	
+	const score_normalElement = document.getElementById("score_normal");
+	const score_normal  = score_normalElement.value;	
+	const score_eventElement = document.getElementById("score_event");
+	const score_event = score_eventElement.value;
+	const bp_useElement = document.getElementById("bp_use");
+	const bp_use = bp_useElement.value;  
+	const pass_useElement = document.getElementById("pass_use");
+	const pass_use  = pass_useElement.value; 
+	const addElement = document.getElementById("add");
+	const add = addElement.value;  
+	const level_nowElement = document.getElementById("level_now");
+	const level_now  = level_nowElement.value;  
+	const exp_needElement = document.getElementById("exp_need");
+	const exp_need = exp_needElement.value;    
+	const bp_nowElement = document.getElementById("bp_now");
+	const bp_now = bp_nowElement.value;  
+	const loudspeaker_nowElement = document.getElementById("loudspeaker_now");
+	const loudspeaker_now  = loudspeaker_nowElement.value;
+	const whistle_nowElement = document.getElementById("whistle_now");
+	const whistle_now  = whistle_nowElement.value;
+	const double_nowElement = document.getElementById("double_now");
+	const double_now = double_nowElement.value;
+	const work_nowElement = document.getElementById("work_now");
+	const work_now = work_nowElement.value;
+	const pass_nowElement = document.getElementById("pass_now");
+	const pass_now  = pass_nowElement.value;
+	const work_maxElement = document.getElementById("work_max");
+	const work_max = work_maxElement.value;
+	const work_timeElement = document.getElementById("work_time");
+	const work_time = work_timeElement.value;
+	const work_eventElement = document.getElementById("work_event");
+	const work_event = work_eventElement.value;
+	const bp_wasteElement = document.getElementById("bp_waste");
+	const bp_waste = bp_wasteElement.value;
+	const work_wasteElement = document.getElementById("work_waste");
+	const work_waste = work_wasteElement.value;
+	const stage_completeElement = document.getElementById("stage_complete");
+	const stage_complete = stage_completeElement.value;
+	const month_bigElement = document.getElementById("month_big");
+	const month_big = month_bigElement.value;
+	const day_missionElement = document.getElementById("day_mission");
+	const day_mission= day_missionElement.value;
+	const day_drawElement = document.getElementById("day_draw");
+	const day_draw= day_drawElement.value;
+	const abilityElement = document.getElementById("ability");
+	const ability= abilityElement.value;
+	
+	/*計算時間*/
+	const time_now = Date.now();
+	const time_end = Date.parse(date_end);
+	const time_left_hour = Math.floor((time_end - time_now)/3600000);
+	const time_left_min = Math.floor((time_end - time_now)/60000);	
+
+	/*判斷活動時長*/
+	var show_time ;
+	if ( time_left_min > 202*60){
+		show_time = 202*60;
+	}else{
+		show_time = time_left_min;
+	}
+	//window.alert("show_time:" + show_time );
+	
+
+	/*剩餘天數*/
+	var day_left  = Math.ceil((time_left_min-60*22)/(60*24));
+	//window.alert("day_left:" + day_left );
+	
+	/*自回bp&work計算*/
+	var bp_recovory = Math.ceil(time_left_min/30)-(bp_waste*day_left);
+	var work_recovory = Math.ceil(time_left_min/work_time)-(work_waste*day_left);
+	//window.alert("bp_recovory:" + bp_recovory );
+	//window.alert("work_recovory:" + work_recovory );
+
+
+	/*判斷 work pt*/
+	var work_pt;
+	if (work_event == 1 ){
+		work_pt = 375;
+	}else{
+		work_pt = 250;
+	}
+	//window.alert("work_pt:" + work_pt );
+	
+	
+	/*道具*/
+	/*大月卡*/
+	var whistle_package;
+	var double_package;
+	if (month_big == 1 ){
+		whistle_package = day_left*5;
+		double_package = day_left*5;
+	}
+	else{
+		whistle_package = 0;
+		double_package = 0;
+	}
+	//window.alert("未領大月哨子數:" + whistle_package );
+	//window.alert("未領大月翻倍數:" + double_package );
+
+	
+	/*whitstle_pt 預計拿*/
+	var whitstle_pt;
+	if (pt_target < 6000) {
+		whitstle_pt = 0 ;
+	}
+	else if (pt_target < 40000){
+		whitstle_pt = 3;
+	}
+	else if (pt_target < 90000){
+		whitstle_pt = 6;
+	}
+	else if (pt_target < 140000){
+		whitstle_pt = 9;
+	}
+	else if (pt_target < 260000){
+		whitstle_pt = 12;
+	}
+	else if (pt_target < 360000){
+		whitstle_pt = 15;
+	}
+	else if (pt_target < 420000){
+		whitstle_pt = 20;
+	}
+	else if (pt_target < 540000){
+		whitstle_pt = 25;
+	}
+	else {    
+		whitstle_pt = 30;
+	}
+
+	/*whitstle_pt 已經拿*/
+	if (pt_now < 6000) {
+		whitstle_pt = whitstle_pt - 0 ;
+	}
+	else if (pt_now < 40000){
+		whitstle_pt = whitstle_pt - 3 ;
+	}
+	else if (pt_now < 90000){
+		whitstle_pt = whitstle_pt - 6 ;
+	}
+	else if (pt_now < 140000){
+		whitstle_pt = whitstle_pt - 9;
+	}
+	else if (pt_now < 260000){
+		whitstle_pt = whitstle_pt - 12;
+	}
+	else if (pt_now < 360000){
+		whitstle_pt = whitstle_pt - 15;
+	}
+	else if (pt_now < 420000){
+		whitstle_pt = whitstle_pt - 20;
+	}
+	else if (pt_now < 540000){
+		whitstle_pt = whitstle_pt - 25;
+	}
+	else {    
+		whitstle_pt = whitstle_pt - 30;
+	}
+	//window.alert("還可拿積分哨子:" + whitstle_pt );
+	
+	
+	/*day_draw*/
+	var whitstle_draw;
+	if(day_draw == 1){
+		whitstle_draw = day_left*3;
+	}
+	else{
+		whitstle_draw = 0;
+	}
+	//window.alert("還可拿每日一抽哨子:" + whitstle_draw );
+	
+	
+	/*loudspeaker_pt*/
+	var loudspeaker_pt;
+	if (pt_target < 1050000){
+		loudspeaker_pt = 0;
+	}
+	else if (pt_target < 2550000){
+		loudspeaker_pt = 1;
+	}
+	else if (pt_target < 3000000){
+		loudspeaker_pt = 2;
+	}
+	else{
+		loudspeaker_pt = 3;
+	}
+
+	if (pt_now < 1050000){
+		loudspeaker_pt = loudspeaker_pt - 0;
+	}
+	else if (pt_now < 2550000){
+		loudspeaker_pt = loudspeaker_pt - 1;
+	}
+	else if (pt_now < 3000000){
+		loudspeaker_pt = loudspeaker_pt - 2;
+	}
+	else {
+		loudspeaker_pt = loudspeaker_pt - 3;
+	}
+	//window.alert("還可拿擴音器:" + loudspeaker_pt );
+	
+	
+	/*登入獎勵*/
+	var whistle_gift = 0;
+	var pass_gift = 0;
+
+	if (day_left < 1 ){
+		pass_gift = 0;
+	}
+	else if (day_left < 2 ){
+		pass_gift = 50;
+	}
+	else if (day_left < 3 ){
+		pass_gift = 100;
+	}
+	else if (day_left < 4 ){
+		pass_gift = 150;
+	}
+	else if (day_left < 5 ){
+		pass_gift = 200;
+	}
+	else if (day_left < 6 ){
+		pass_gift = 250;
+	}
+	else if (day_left < 7 ){
+		pass_gift = 300;
+	}
+	else if (day_left < 8 ){
+		if(gift == 100){
+			pass_gift = 400;
+		}else {
+			pass_gift = 350;
+		}
+	}
+	else {
+		if(gift == 100){
+			pass_gift = 400;
+			whistle_gift = 100;
+		}else {
+			pass_gift = 450;
+		}
+	}
+	//window.alert("還可拿登入哨子:" + whistle_gift );
+	//window.alert("還可拿登入pass:" + pass_gift );
+
+
+	/*daily mission*/
+	var pass_mission;
+	if (day_mission == 1 ){
+		pass_mission = day_left * 50;		
+	}
+	else{
+		pass_mission = 0;
+	}
+	//window.alert("任務pass:" + pass_mission );
+
+	
+	/*星光次數*/
+	var stage_event;
+	if (stage_complete == 1){
+		stage_event = day_left*3;
+	}
+	else{
+		stage_event = 0;	
+	}
+	//window.alert("預計還有星光次數：" + stage_event);
+
+	var time_stage;
+	if (stage_complete == 1){
+		time_stage = (9-day_left)*3;
+	}
+	else{
+		time_stage = 0;	
+	}
+	//window.alert ("已進行星光次數：" + time_stage);
+
+
+	/*exp1計算*/
+	/*各小項加總*/
+	var bp_all = Number(bp_recovory);
+	var whistle_all = Number(whistle_gift) + Number(whistle_now) + Number(whistle_package) + Number(whitstle_draw) + Number(whitstle_pt);
+	var loudspeaker_all = Number(loudspeaker_now) + Number(loudspeaker_pt);
+	var double_all = Number(double_now) + Number(double_package);
+	
+	
+	var exp_bp;
+	if (bp_use == 1){
+		exp_bp = 100*(bp_all + whistle_all + 10*(loudspeaker_all) + double_all);
+	}
+	else if (bp_use == 2){
+		exp_bp = 160*(Math.ceil((bp_all + whistle_all)/2) + 10*(loudspeaker_all)/2 + Math.ceil(double_all/2));
+	}
+	else if (bp_use == 3){
+		exp_bp = 200*(Math.ceil((bp_all + whistle_all)/3) + Math.ceil((10*loudspeaker_all)/3) + Math.ceil(double_all/3));
+
+	}
+	else if (bp_use == 6){
+		exp_bp = 300*(Math.ceil((bp_all + whistle_all)/6) + Math.ceil((10*loudspeaker_all)/6) + Math.ceil(double_all/6));
+	}
+	else{
+		exp_bp = 400*(Math.ceil((bp_all + whistle_all)/10) + loudspeaker_all + Math.ceil(double_all/10));
+	}
+
+	/*無計入星光時的20*/
+	var exp_other;
+	var exp_gain;
+	exp_other = 20*work_recovory;
+	exp_gain = exp_bp + exp_other;
+	//window.alert ("exp_gain：" + exp_gain);
+	//window.alert( "一共獲得" + exp_bp + "+" + exp_other + "共" + exp_gain + "經驗值" );
+
+
+
+	/*exp2計算*/
+	var level_mid = 0;
+	var level_now_t = Number(level_now);
+	var exp_need_t = Number(exp_need);
+	for (level_mid = level_now_t; exp_gain >= exp_need_t; level_mid++){
+		exp_gain = exp_gain - exp_need_t;
+		exp_need_t = level_mid*100+2500;
+		//window.alert ( "剩餘exp:" + exp_gain );
+	}
+
+	var level_up = Math.floor(level_mid - level_now_t);
+	//window.alert ( "一共升級:" + level_up);
+
+
+	/*pt平均計算*//* normal:1bp ; event:100pass */
+	var score_normal_t = Number(score_normal);
+	var score_event_t = Number(score_event);
+	var add_t = Number(add);
+	var pt_normal = Math.floor(Math.floor(2000+(score_normal_t/5000))*(1+add_t/100));
+	var pt_event = Math.floor(Math.floor(10000+(score_event_t/5000))*(1+add_t/100));
+
+
+	/*平刷數據1*/
+	var work_max_t = Number(work_max);
+	var ability_t = Number(ability);
+	var free_bp = Number(bp_now) + Number(bp_recovory) + 10*level_up ;
+	var free_work = Number(work_now) + Number(work_recovory) + work_max_t*level_up;
+	var free_whistle = whistle_all;
+	var free_loudspeaker = loudspeaker_all;
+	var free_double = double_all;
+	var free_ability = ability_t*day_left;
+
+
+	/*pass計算1*/
+	var pass_now_t = Number(pass_now);
+	var free_pass = free_bp*10 + free_work + free_whistle*10 + free_double*10 + free_loudspeaker*100 + pass_gift + pass_mission + pass_now_t;
+	//window.alert ( "合計可用pass數：" + free_pass);
+
+
+	/*一般曲餘數*/   //翻倍會算次數嗎？
+	var bp_transfer = free_bp + free_whistle + 10*free_loudspeaker;
+	var remain_normal = 0 ;
+	var bp_use_t = Number(bp_use);
+	var bp_remain = (bp_transfer) % bp_use_t;
+
+
+	if (bp_remain == 9){
+		remain_normal = remain_normal + 2;
+		bp_remain = 0;
+	}
+	else if (bp_remain == 8){
+		remain_normal = remain_normal + 2;
+		bp_remain = 0;
+	}
+	else if (bp_remain == 7){
+		remain_normal = remain_normal + 2;
+		bp_remain = 0;
+	}
+	else if (bp_remain == 6){
+		remain_normal = remain_normal + 1;
+		bp_remain = 0;
+	}
+	else if (bp_remain == 5){
+		remain_normal = remain_normal + 2;
+		bp_remain = 0;
+	}
+	else if (bp_remain == 4){
+		remain_normal = remain_normal + 2;
+		bp_remain = 0;
+	}
+	else if (bp_remain == 3){
+		remain_normal = remain_normal + 1;
+		bp_remain = 0;
+	}
+	else if (bp_remain == 2){
+		remain_normal = remain_normal + 1;
+		bp_remain = 0;
+	}
+	else {
+		remain_normal = remain_normal + 1;
+		bp_remain = 0;
+	}
+
+	//window.alert ( "一般曲整數：" + Math.floor( bp_transfer / bp_use_t));
+	//window.alert ( "一般曲餘數：" + bp_remain);
+
+	/*一般曲計算*/	
+	var time_normal = Math.floor( bp_transfer / bp_use_t) + remain_normal;
+	//window.alert ( "平刷一般曲次數：" + time_normal);
+
+
+	/*活動曲餘數*/
+	var remain_event = 0;
+	var pass_use_t = Number(pass_use);
+	var pass_remain = free_pass % pass_use_t;
+	
+	if (pass_remain == 900){
+		remain_event = remain_event + 5;
+		pass_remain = 0;
+	}
+	else if (pass_remain == 800){
+		remain_event = remain_event + 4;
+		pass_remain = 0;
+	}
+	else if (pass_remain == 700){
+		remain_event = remain_event + 3;
+		pass_remain = 0;
+	}
+	else if (pass_remain == 600){
+		remain_event = remain_event + 2;
+		pass_remain = 0;
+	}
+	else if (pass_remain == 500){
+		remain_event = remain_event + 1;
+		pass_remain = 0;
+	}
+	else if (pass_remain == 400){
+		remain_event = remain_event + 4;
+		pass_remain = 0;
+	}
+	else if (pass_remain == 300){
+		remain_event = remain_event + 3;
+		pass_remain = 0;
+	}
+	else if (pass_remain == 200){
+		remain_event = remain_event + 1;
+		pass_remain = 0;
+	}
+	else {
+		remain_event = remain_event + 1;
+		pass_remain = 0;
+	}
+
+	//window.alert ( "活動曲整數：" + Math.ceil(free_pass / pass_use_t));
+	//window.alert ( "活動曲餘數：" + pass_remain);
+
+	/*活動曲計算*/
+	time_event = Math.ceil( free_pass / pass_use_t) + remain_event;
+	//window.alert ( "平刷活動曲次數：" + time_event);
+
+
+	/*free_pt_count*/
+	var free_bp_pt = pt_normal*free_bp;
+	var free_work_pt = work_pt*free_work;
+	var free_whistle_pt = pt_normal*free_whistle;
+	var free_loudspeaker_pt = pt_normal*10*free_loudspeaker;
+	var free_double_pt = pt_normal*free_double;
+	var free_stage_pt = 5000*stage_event;
+	var free_pass_pt = Math.floor(pt_event * free_pass / 100);
+	var free_pt_total = free_bp_pt + free_work_pt + free_whistle_pt + free_loudspeaker_pt + free_double_pt + free_stage_pt + free_pass_pt + Number(pt_now) +free_ability;
+	/*window.alert ( "可用bp數獲得pt：" + free_bp_pt);
+	window.alert ( "可用work數獲得pt：" + free_work_pt);
+	window.alert ( "可用哨子數獲得pt：" + free_whistle_pt);
+	window.alert ( "可用擴音器數獲得pt：" + free_loudspeaker_pt);
+	window.alert ( "可用翻倍數獲得pt：" + free_double_pt);
+	window.alert ( "可用pass獲得pt：" + free_pass_pt);
+	window.alert ( "未打星光獲得pt：" +  5000*stage_event);
+	window.alert ( "平刷可獲得縂pt(含製作人)：" + free_pt_total);*/
+
+
+	/*diamond_pt_count*/
+	var adv_bp = (10*pt_normal + pt_event)/10;
+	var pt_target_t = Number(pt_target);
+	var need_bp = Math.ceil((pt_target_t - free_pt_total) / adv_bp);
+	var dia_need = 20*need_bp;
+	//window.alert ( "耗鑽：" + dia_need);
+
+
+	/*paid_exp_count*/
+	var paid_exp = 0;
+	if (bp_use == 1){
+		paid_exp = 100*need_bp;
+	}
+	else if (bp_use == 2){
+		paid_exp = 160*Math.ceil(need_bp/2);
+	}
+	else if (bp_use == 3){
+		paid_exp = 200*Math.ceil(need_bp/3);
+	}
+	else if (bp_use == 6){
+		paid_exp = 300*Math.ceil(need_bp/6);
+	}
+	else{
+		paid_exp = 400*Math.ceil(need_bp/10);
+	}
+	
+	
+	var level_final = 0;
+	for (level_final = level_mid; paid_exp >= exp_need_t; level_final++){
+		paid_exp = paid_exp - exp_need_t;
+		exp_need_t = level_final*100+2500;
+		window.alert ( "剩餘exp:" + paid_exp);
+	}
+	
+	var paid_level_up = Math.floor(level_final-level_mid);
+	//window.alert ( "付費升等：" + paid_level_up);
+	var final_level_up = level_up + paid_level_up;
+
+	/*歌曲次數計算2*/
+	/*一般曲*/
+	var paid_normal = Math.ceil((need_bp + 10*paid_level_up)/bp_use_t);
+	var paid_normal_remain = (need_bp + 10*paid_level_up) % bp_use_t;
+
+	if (paid_normal_remain == 9){
+		paid_normal = paid_normal + 2;
+		paid_normal_remain = 0;
+	}
+	else if (paid_normal_remain == 8){
+		paid_normal = paid_normal + 2;
+		paid_normal_remain = 0;
+	}
+	else if (paid_normal_remain == 7){
+		paid_normal = paid_normal + 2;
+		paid_normal_remain = 0;
+	}
+	else if (paid_normal_remain == 6){
+		paid_normal = paid_normal + 1;
+		paid_normal_remain = 0;
+	}
+	else if (paid_normal_remain == 5){
+		paid_normal = paid_normal + 2;
+		paid_normal_remain = 0;
+	}
+	else if (paid_normal_remain == 4){
+		paid_normal = paid_normal + 2;
+		paid_normal_remain = 0;
+	}
+	else if (paid_normal_remain == 3){
+		paid_normal = paid_normal + 1;
+		paid_normal_remain = 0;
+	}
+	else if (paid_normal_remain == 2){
+		paid_normal = paid_normal + 1;
+		paid_normal_remain = 0;
+	}
+	else {
+		paid_normal = paid_normal + 1;
+		paid_normal_remain = 0;
+	}
+
+	/*活動曲*/
+	var paid_event = Math.ceil((10*(need_bp + 10*paid_level_up))/pass_use_t);
+	var paid_event_remain = (need_bp + 10*paid_level_up) % pass_use_t;
+	if (paid_event_remain == 900){
+		paid_event = paid_event + 5;
+		paid_event_remain = 0;
+	}
+	else if (paid_event_remain == 800){
+		paid_event = paid_event + 4;
+		paid_event_remain = 0;
+	}
+	else if (paid_event_remain == 700){
+		paid_event = paid_event + 3;
+		paid_event_remain = 0;
+	}
+	else if (paid_event_remain == 600){
+		paid_event = paid_event + 2;
+		paid_event_remain = 0;
+	}
+	else if (paid_event_remain == 500){
+		paid_event = paid_event + 1;
+		paid_event_remain = 0;
+	}
+	else if (paid_event_remain == 400){
+		paid_event = paid_event + 4;
+		paid_event_remain = 0;
+	}
+	else if (paid_event_remain == 300){
+		paid_event = paid_event + 3;
+		paid_event_remain = 0;
+	}
+	else if (paid_event_remain == 200){
+		paid_event = paid_event + 1;
+		paid_event_remain = 0;
+	}
+	else {
+		paid_event = paid_event + 1;
+		paid_event_remain = 0;
+	}
+
+
+
+	var  total_normal = paid_normal + time_normal ;
+	var  total_event = paid_event + time_event ;
+
+	var num_bp = need_bp - 10*paid_level_up;
+	var num_dia = dia_need - 20*10*paid_level_up ;
+	
+	/*計算結束 */ 			/*歐耶 歐耶 歐耶*/
+
+
+
+	/*換頁輸出未設定排版  new sub win 可能可以解決？*/
+	/*document.write("洗牌or箱活碎鑽計算結果：</br></br>");
+	document.write("剩餘活動時間：" + time_left_hour + "小時" + '</br>');
+	document.write("剩餘自回bp數：" + bp_recovory + '</br>');
+	document.write("剩餘自回工作券數：" + work_recovory + '</br>');
+	document.write("平刷可得pt數："+ free_pt_total +"</br>");
+	document.write("總共升級："+ final_level_up +"</br>");
+	document.write("普通曲每bp可獲得pt數："+ pt_normal +"</br>");
+	document.write("活動曲每100pass可獲得pt數："+ pt_event +"</br>");
+	document.write("一般曲總共要刷："+ total_normal +"</br>");
+	document.write("活動曲總共要刷："+ total_event +"</br>");
+	document.write("達標還需bp數："+ num_bp +"</br>");
+	document.write("須耗鑽數："+ num_dia +"</br>");*/
+	
+	var showbox_01 = document.getElementById("showbox_01");
+	showbox_01.innerHTML = "洗牌or箱活碎鑽計算結果：";
+	
+	var showbox_02 = document.getElementById("showbox_02");
+	showbox_02.innerHTML = "剩餘活動時間：" + time_left_hour + "小時" ;
+	
+	var showbox_03 = document.getElementById("showbox_03");
+	showbox_03.innerHTML = "剩餘自回bp數：" + bp_recovory ;
+	
+	var showbox_04 = document.getElementById("showbox_04");
+	showbox_04.innerHTML = "剩餘自回工作券數：" + work_recovory ;
+	
+	var showbox_05 = document.getElementById("showbox_05");
+	showbox_05.innerHTML = "平刷可得pt數："+ free_pt_total ;
+	
+	var showbox_06 = document.getElementById("showbox_06");
+	showbox_06.innerHTML = "總共升級："+ final_level_up ;
+	
+	var showbox_07 = document.getElementById("showbox_07");
+	showbox_07.innerHTML = "普通曲每bp可獲得pt數："+ pt_normal ;
+	
+	var showbox_08 = document.getElementById("showbox_08");
+	showbox_08.innerHTML = "活動曲每100pass可獲得pt數："+ pt_event ;
+	
+	var showbox_09 = document.getElementById("showbox_09");
+	showbox_09.innerHTML = "一般曲總共要刷："+ total_normal ;
+	
+	var showbox_10 = document.getElementById("showbox_10");
+	showbox_10.innerHTML = "活動曲總共要刷："+ total_event ;
+	
+	var showbox_11 = document.getElementById("showbox_11");
+	showbox_11.innerHTML = "達標還需bp數："+ num_bp ;
+	
+	var showbox_12 = document.getElementById("showbox_12");
+	showbox_12.innerHTML = "須耗鑽數："+ num_dia ;
+	
+}
+
+
+
+</script>
+
+
+<body>
+<form name='form' id='form'>
+<div class = "card" >
+	<div class = "card-header">
+		活動類型：新曲
+	<br>
+	</div>
+	
+
+	<div class = "blocks" >
+	    
+	    為避免用到舊的數據，請先刷新(F5)再輸入<br>
+        *下拉到底有假設前提*<br>
+		<a href="https://aries9059.wordpress.com/2021/07/19/diamond_calc/">*輸入説明請點我*</a>
+	    
+		<div class = "setting-block" >
+			現在時間：
+			<br>
+			<script>
+				Today = new Date();
+				yy=Today.getFullYear();
+				mm=Today.getMonth()+1;
+				dd=Today.getDate();
+				hh=Today.getHours();
+				MM=Today.getMinutes();
+				document.write(yy+"年"+mm+"月"+dd+"日"+hh+"時"+MM+"分");
+			</script>
+		</div>
+	<br>
+		<div class = "setting-block" >
+			登入獎勵：
+			<select name="gift" id="gift" required>
+				<option value="">下拉選取</option>
+				<option value="450">450個pass</option>
+				<option value="100">100個哨子+400個pass</option>
+			</select>
+		</div>
+	<br>
+		<div class = "setting-block" >
+		結束時間：<br>(港台星馬)(UTC+8)
+		<input required type="datetime-local"  name="date_end" id="date_end" style=width:auto >
+		</div>
+	<br>
+		<div class = "setting-block" >
+		現在活動積分：
+		<input required type="number" name="pt_now" id="pt_now" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div>
+	<br>
+		<div class = "setting-block" >
+		目標積分：
+		<input required type="number" name="pt_target" id="pt_target" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div>
+	<br>	
+		<div class = "setting-block" >
+		一般曲分數：<input required type="number" name="score_normal" id="score_normal" placeholder="點擊輸入" style=width:150px inputmode="numeric"> 
+		</div>
+	<br>
+		<div class = "setting-block" >
+		活動曲分數：<input required type="number" name="score_event" id="score_event" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div>
+	<br>
+		<div class = "setting-block" >
+		BP用量：
+			<select name="bp_use" id="bp_use" required>
+				<option value="">下拉選取</option>
+				<option value="1">1BP</option>
+				<option value="2">2BP</option>
+				<option value="3">3BP</option>
+				<option value="6">6BP</option>
+				<option value="10">10BP</option>
+			</select>
+		</div>
+	<br>
+		<div class = "setting-block" >
+		pass用量：
+			<select name="pass_use" id="pass_use" required>
+				<option value="">下拉選取</option>
+				<option value="100">100pass</option>
+				<option value="500">500pass</option>
+				<option value="1000">1000pass</option>
+			</select>
+		</div>
+	<br>
+		<div class = "setting-block" >
+		加成%：<input required type="number" name="add" id="add" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div >
+	<br>
+		<div class = "setting-block" >
+		目前玩家等級：<input required type="number" name="level_now" id="level_now" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div >
+	<br>
+		<div class = "setting-block" >
+		距離升級還需要：<input required type="number" name="exp_need" id="exp_need" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div>
+	<br>
+		<div class = "setting-block" >
+		目前bp數：<input required type="number" name="bp_now" id="bp_now" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div>
+	<br>
+		<div class = "setting-block" >
+		目前工作券數：<input required type="number" name="work_now" id="work_now" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div>
+	<br>
+		<div class = "setting-block" >
+		目前擴音器數量：<input required type="number" name="loudspeaker_now" id="loudspeaker_now" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div>
+	<br>
+		<div class = "setting-block" >
+		哨子數（禮包要<br>自己加；大月不用）：<input required type="number" name="whistle_now" id="whistle_now" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div >
+	<br>
+		<div class = "setting-block" >
+		翻倍券數（禮包要<br>自己加；大月不用）：<input required type="number" name="double_now" id="double_now" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div>
+	<br>
+		<div class = "setting-block" >
+		目前pass數量：<input required type="number" name="pass_now" id="pass_now" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div >
+	<br>
+		<div class = "setting-block" >
+		工作券上限：<select name="work_max" id="work_max" required>
+				<option value="">下拉選取</option>
+				<option value="3">3張</option>
+				<option value="5">5張</option>
+				<option value="8">8張</option>
+				<option value="10">10張</option>
+				<option value="11">11張</option>
+				
+			</select>
+		</div>
+	<br>
+		<div class = "setting-block" >
+		工作券回復時間：
+			<select name="work_time" id="work_time" required>
+				<option value="">下拉選取</option>
+				<option value="60">60分鐘</option>
+				<option value="56">56分鐘</option>
+				<option value="53">53分鐘</option>
+				<option value="50">50分鐘</option>
+				<option value="45">45分鐘</option>
+				<option value="43">43分鐘</option>
+			</select>
+		</div>
+	<br>
+		<div class = "setting-block" >
+		限定工作與否：
+			<select name="work_event" id="work_event" required>
+				<option value="">下拉選取</option>
+				<option value="1">限定工作</option>
+				<option value="0">日常工作</option>
+			</select>
+		</div>
+	<br>
+		<div class = "setting-block" >
+		每日因滿溢而&ensp;<br>浪費的BP數：<input required type="number" name="bp_waste" id="bp_waste" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div >
+	<br>
+		<div class = "setting-block" >
+		每日因滿溢而&ensp;<br>浪費工作券數：<input required type="number" name="work_waste" id="work_waste" placeholder="點擊輸入" style=width:150px inputmode="numeric">
+		</div>
+	<br>
+		<div class = "setting-block" >
+		有無完成3輪星光的活動曲：
+			<select name="stage_complete" id="stage_complete" required>
+				<option value="">下拉選取</option>
+				<option value="1">能每日完成</option>
+				<option value="0">無法每日完成</option>
+			</select>
+		</div >
+	<br>
+		<div class = "setting-block" >
+		有無氪大月卡：
+			<select name="month_big" id="month_big" required>
+				<option value="">下拉選取</option>
+				<option value="1">有氪</option>
+				<option value="0">沒有氪</option>
+			</select>
+		</div >
+	<br>
+		<div class = "setting-block" >
+		有無完成每日任務：
+			<select name="day_mission" id="day_mission" required>
+				<option value="">下拉選取</option>
+				<option value="1">能每日完成</option>
+				<option value="0">無法每日完成</option>
+			</select>
+		</div >
+	<br>
+		<div class = "setting-block" >
+		有無每日一付費抽卡：
+			<select name="day_draw" id="day_draw" required>
+				<option value="">下拉選取</option>
+				<option value="1">每日一付費抽</option>
+				<option value="0">無每日一付費抽</option>
+			</select>
+		</div >
+	<br>
+		<div class = "setting-block" >
+		活動企劃能力：
+			<select name="ability" id="ability" required>
+				<option value="">下拉選取</option>
+				<option value="0">還沒開能力</option>
+				<option value="3500">lv1~lv6(3000~4000)</option>
+				<option value="4500">lv7~lv11(4200~5000)</option>
+				<option value="5500">lv12~lv20(5200~6000)</option>
+			</select>
+		</div >
+	<br>
+	確認每格都有填到且正確再按計算鍵看結果 (●'◡'●)
+	</div>
+<br><br>
+
+
+	<input type='button' name='submit' value='計算' onclick='run_all();'class ="button"  />
+
+	<br><br>
+  
+	<div class = "card-header"  id ="showbox_01" >
+		輸入完結果將顯示在下方各橫行内
+	</div>
+  
+  
+	<div class = "blocks" >
+		<div class = "setting-block"  id ="showbox_02">
+		剩餘活動時間：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_03">
+		剩餘自回bp數：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_04">
+		剩餘自回工作券數：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_05">
+		平刷可得pt數：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_06">
+		總共升級：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_07">
+		普通曲每bp可獲得pt數：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_08">
+		活動曲每100pass可獲得pt數：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_09">
+		一般曲總共要刷：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_10">
+		活動曲總共要刷：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_11">
+		達標還需bp數：
+		</div>
+		<br>
+		
+		<div class = "setting-block"  id ="showbox_12">
+		須耗鑽數：
+		</div>
+		<br>
+		
+	</div>
+  
+	<div class = "show-block"  >
+		
+			<span style="text-align:center">預設假設：</span>
+			1. 有bp會優先拿去打歌而非打工。<br>
+			2. 輸入的資源預計全部用完，不想<br>
+			用的話在該欄位填0或者預計要用的<br>
+			數量就好。<br>
+			
+			
+	</div >
+<br>
+  
+</form>
+
+
+</body>
+</html>
