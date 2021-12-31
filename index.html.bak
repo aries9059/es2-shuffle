@@ -843,7 +843,7 @@ function run_all(){
 <form name='form' id='form'>
 <div class = "card" >
 	<div class = "card-header">
-		活動類型：新曲
+		活動類型：新曲or箱活
 	<br>
 	</div>
 	
