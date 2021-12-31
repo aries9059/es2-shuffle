@@ -19,6 +19,23 @@ body {
 }
 
 
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: steelblue	;
+    background-clip: border-box;
+    border-radius: 0.5rem;
+	align-items: center;
+	width: auto;
+	height: auto;
+	
+}
+
+
 .card-header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
@@ -117,6 +134,21 @@ body {
     background-color: steelblue	;
 }
 
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: steelblue	;
+    background-clip: border-box;
+	align-items: center;
+	width: auto;
+	height: auto;
+	
+}
 
 .card-header {
     padding: 0rem 0rem;
