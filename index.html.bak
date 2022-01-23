@@ -312,6 +312,7 @@ function run_all(){
 	}else{
 		show_time_min = time_left_min;
 	}
+	var show_time_hour = show_time_min/60;
 	
 
 	/*剩餘天數*/
@@ -733,7 +734,6 @@ function run_all(){
 	for (level_final = level_mid; paid_exp >= exp_need_t; level_final++){
 		paid_exp = paid_exp - exp_need_t;
 		exp_need_t = level_final*100+2500;
-		window.alert ( "剩餘exp:" + paid_exp);
 	}
 	
 	var paid_level_up = Math.floor(level_final-level_mid);
@@ -834,7 +834,7 @@ function run_all(){
 	showbox_01.innerHTML = "洗牌or箱活碎鑽計算結果：";
 
 	var showbox_02 = document.getElementById("showbox_02");
-	showbox_02.innerHTML = "剩餘活動時間：" + show_time_min + "小時" ;
+	showbox_02.innerHTML = "剩餘活動時間：" + show_time_hour + "小時" ;
 	
 	var showbox_03 = document.getElementById("showbox_03");
 	showbox_03.innerHTML = "剩餘自回bp數：" + bp_recovory ;

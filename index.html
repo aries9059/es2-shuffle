@@ -313,7 +313,8 @@ function run_all(){
 		show_time_min = time_left_min;
 	}
 	var show_time_hour = show_time_min/60;
-	
+	var show_hour = Math.floor(show_time_hour);
+	var show_min = Math.floor(show_time_min % 60);
 
 	/*剩餘天數*/
 	var day_left  = Math.ceil((show_time_min-60*22)/(60*24));
@@ -834,7 +835,7 @@ function run_all(){
 	showbox_01.innerHTML = "洗牌or箱活碎鑽計算結果：";
 
 	var showbox_02 = document.getElementById("showbox_02");
-	showbox_02.innerHTML = "剩餘活動時間：" + show_time_hour + "小時" ;
+	showbox_02.innerHTML = "剩餘活動時間：" + show_hour + "小時" + show_min + "分鐘";
 	
 	var showbox_03 = document.getElementById("showbox_03");
 	showbox_03.innerHTML = "剩餘自回bp數：" + bp_recovory ;
